@@ -105,6 +105,7 @@ else
 	exit
 fi
 rm -rf installjava
+termux-wake-unlock;
 fi
 exit
 
