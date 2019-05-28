@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+unset _JAVA_OPTIONS
+WORKING_DIRECTORY=~/.local/share/apktool/framework/
+if [ ! -d ${WORKING_DIRECTORY} ]; then
+	mkdir -m 700 -p ${WORKING_DIRECTORY}
+	ln -s $PREFIX/share/framework-res.apk ${WORKING_DIRECTORY}/1.apk
+fi
+
+exec $PREFIX/bin/java -Xmx1024M -Dfile.encoding=utf-8\
+	-Duser.home=/data/data/com.termux/files/home \
+	-Djava.io.tmpdir=$HOME/.local/share/apktool/framework/ \
+	-jar $PREFIX/bin/apktool.jar \
+	-p $HOME.local/share/apktool/framework/ \
+	$@

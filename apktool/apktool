@@ -1,0 +1,2 @@
+#!/data/data/com.termux/files/usr/bin/bash
+exec java -Xmx1024m -Djava.io.tmpdir=$HOME/.apktool -jar $PREFIX/bin/apktool.jar -p $HOME/.apktool "$@"

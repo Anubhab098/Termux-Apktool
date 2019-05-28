@@ -1,0 +1,7 @@
+--- /data/data/com.termux/files/usr/etc/bash.bashrc	2019-05-22 08:49:41.253996954 +0530
++++ b.rc	2019-05-27 13:46:37.111062890 +0530
+@@ -3,3 +3,4 @@
+ }
+ 
+ PS1='\$ '
++export _JAVA_OPTIONS='-Duser.home=/data/data/com.termux/files/home -Djava.io.tmpdir=/data/data/com.termux/files/usr/tmp'
