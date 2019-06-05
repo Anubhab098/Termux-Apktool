@@ -81,10 +81,12 @@ if [ -d "$HOME/metasploit-framework" ]; then
 	echo -e "\e[1;34m[*] \e[32mYour metasploit-framework is present on Home directory....\e[0m";
 	rm -rf $PREFIX/bin/apktool;
 	cd apktool
-	(axel -kaq "https://archive.org/download/5.0.23.tar/apktool.jar") &> /dev/null & spin
+	echo -e "\e[1;34m[*] \e[32mDownloading... apktool.jar\e[0m";
+	(axel -kaq "https://archive.org/download/5.0.23.tar/apktool.jar")
 	cd -
 	cd apktool/.apktool
-	(axel -kaq "https://archive.org/download/5.0.23.tar/framework-res.apk") &> /dev/null & spin
+	echo -e "\e[1;34m[*] \e[32mDownloading... framework-res.apk\e[0m";
+	(axel -kaq "https://archive.org/download/5.0.23.tar/framework-res.apk")
 	cd -
 	cp apktool/apktool.jar $PREFIX/bin/
 	cp apktool/.apktool/aapt apktool/.apktool/zipalign apktool/.apktool/apktool $PREFIX/bin/
