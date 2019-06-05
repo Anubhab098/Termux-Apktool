@@ -106,7 +106,7 @@ elif [ -d "$PREFIX/opt/metasploit-framework" ]; then
 	cp apk.rb $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb
         (patch -N $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb apktool/.apktool/apk.rb.patch) &> /dev/null
         cp apktool/.apktool/framework-res.apk $PREFIX/share/
-	echo -e "\e[1;34m[*] \e[32mApktool successfully in    stalled..\e[0m";
+	echo -e "\e[1;34m[*] \e[32mApktool successfully installed..\e[0m";
 	echo ""
 else
 	echo -e "\e[1;34m[*] \e[32mYou have to install metasploit-framework first...\e[0m";
