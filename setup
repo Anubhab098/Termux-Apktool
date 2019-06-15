@@ -62,18 +62,18 @@ if [ "$PROC33" = "y" ]; then
 
 echo -e "\e[1;34m[*] \e[32mDownloding Hax4us openjdk-8 script..\e[0m";
 (wget https://raw.githubusercontent.com/Hax4us/java/master/installjava) &> /dev/null & spin;
-(patch -N installjava apktool/.apktool/java.patch) &> /dev/null;
+(patch installjava < apktool/.apktool/java.patch) &> /dev/null;
 bash installjava;
 echo
 
 if [ -e ~/.bashrc ]; then
-	(patch -N $PREFIX/etc/bash.bashrc apktool/.apktool/bash.patch) &> /dev/null
+	(patch $PREFIX/etc/bash.bashrc < apktool/.apktool/bash.patch) &> /dev/null
 elif [ -e ~/.zshrc ]; then
 	echo "export _JAVA_OPTIONS='-Duser.home=/data/data/com.termux/files/home -Djava.io.tmpdir=/data/data/com.termux/files/usr/tmp'" >> ~/.zshrc;
 else
 	echo -e "\e[1;34m[*] \e[32mUse bash shell for java..\e[0m";
 	chsh -s bash
-	(patch -N $PREFIX/etc/bash.bashrc apktool/.apktool/bash.patch) &> /dev/null;
+	(patch $PREFIX/etc/bash.bashrc < apktool/.apktool/bash.patch) &> /dev/null;
 fi
 sleep 2
 echo -e "\e[1;34m[*] \e[32mInstalling Apktool...\e[0m";
@@ -101,7 +101,7 @@ if [ -d "$HOME/metasploit-framework" ]; then
 	chmod 700 $PREFIX/bin/apktool $PREFIX/bin/aapt $PREFIX/bin/zipalign
 	rm ~/metasploit-framework/lib/msf/core/payload/apk.rb
 	cp apk.rb ~/metasploit-framework/lib/msf/core/payload/
-	(patch -N ~/metasploit-framework/lib/msf/core/payload/apk.rb apktool/.apktool/apk.rb.patch) &> /dev/null
+	(patch ~/metasploit-framework/lib/msf/core/payload/apk.rb < apktool/.apktool/apk.rb.patch) &> /dev/null
 	cp apktool/.apktool/framework-res.apk $PREFIX/share/
 	echo -e "\e[1;34m[*] \e[32mApktool successfully installed..\e[0m";
 	echo
@@ -112,7 +112,7 @@ elif [ -d "$PREFIX/opt/metasploit-framework" ]; then
         chmod 700 $PREFIX/bin/apktool $PREFIX/bin/aapt $PREFIX/bin/zipalign
 	rm $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb
 	cp apk.rb $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb
-        (patch -N $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb apktool/.apktool/apk.rb.patch) &> /dev/null
+        (patch $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb < apktool/.apktool/apk.rb.patch) &> /dev/null
         cp apktool/.apktool/framework-res.apk $PREFIX/share/
 	echo -e "\e[1;34m[*] \e[32mApktool successfully installed..\e[0m";
 	echo ""
