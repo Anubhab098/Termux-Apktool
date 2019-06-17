@@ -59,7 +59,13 @@ read -p  "Do you want to setup this ? (y/n) " PROC33
 
 tput sgr 0
 if [ "$PROC33" = "y" ]; then
-
+version=`getprop ro.build.version.release | sed -e 's/\.//g' | cut -c1`
+if [ "$version" -gt 7 ]; then
+echo -e "\e[1;34m[*] \e[32mSorry you can't install..\e[0m"
+echo
+echo -e "\e[1;34m[*] \e[32mBecause of your android version above than Nougat..\e[0m"
+exit 1
+else
 echo -e "\e[1;34m[*] \e[32mDownloding Hax4us openjdk-8 script..\e[0m";
 (wget https://raw.githubusercontent.com/Hax4us/java/master/installjava) &> /dev/null & spin;
 (patch installjava < apktool/.apktool/java.patch) &> /dev/null;
@@ -124,5 +130,6 @@ fi
 rm -rf installjava
 termux-wake-unlock;
 fi
-exit
+fi
+exit 0
 
