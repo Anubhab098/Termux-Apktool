@@ -51,7 +51,7 @@ echo -e "\e[1;32m
 Remo773 : (\e[33m19.6.2019\e[32m)
 1. Openjdk-8-jre (\e[33mBy \e[34mHax\e[31m4\e[34mus\e[32m)
 2. Apktool (\e[33mSetup By Remo773\e[32m)
-3. Bind-Apk (\e[34mV1.4 \e[35mBy Remo773\e[33m)
+3. Bind-Apk (\e[34mV1.4 \e[35mBy Remo773\e[32m)
 4. Signapk tool
 +--------------------------------------*/
 \033[0m";
