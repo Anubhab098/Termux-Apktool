@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+
+java -jar $PREFIX/bin/signapk.jar \
+	$PREFIX/lib/publickey.x509.pem \
+	$PREFIX/lib/publickey.pk8 \
+	$@
+
+
+
+
+#	java -classpath sign.jar orig.SignApk testkey.x509.pem testkey.pk8 my.apk my.s.apk
