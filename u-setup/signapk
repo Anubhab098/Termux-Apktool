@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
+unset _JAVA_OPTIONS
 
 
-java -jar $PREFIX/bin/signapk.jar \
+exec $PREFIX/bin/java -Duser.home=/data/data/com.termux/files/home \
+	-Djava.io.tmpdir=/data/data/com.termux/files/usr/tmp \
+	-jar $PREFIX/bin/signapk.jar
 	$PREFIX/lib/publickey.x509.pem \
 	$PREFIX/lib/publickey.pk8 \
 	$@
