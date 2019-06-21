@@ -4,7 +4,7 @@ unset _JAVA_OPTIONS
 
 exec $PREFIX/bin/java -Duser.home=/data/data/com.termux/files/home \
 	-Djava.io.tmpdir=/data/data/com.termux/files/usr/tmp \
-	-jar $PREFIX/bin/signapk.jar
+	-jar $PREFIX/bin/signapk.jar \
 	$PREFIX/lib/publickey.x509.pem \
 	$PREFIX/lib/publickey.pk8 \
 	$@
