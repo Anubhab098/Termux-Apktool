@@ -111,6 +111,7 @@ if [ -d "$HOME/metasploit-framework" ]; then
 	cp apktool/apktool.jar $PREFIX/bin/
 	cp apktool/.apktool/aapt apktool/.apktool/zipalign apktool/.apktool/apktool $PREFIX/bin/
 	chmod 700 $PREFIX/bin/apktool $PREFIX/bin/aapt $PREFIX/bin/zipalign $PREFIX/bin/bind-apk $PREFIX/bin/signapk
+	termux-fix-shebang $PREFIX/bin/apktool $PREFIX/bin/aapt $PREFIX/bin/zipalign $PREFIX/bin/bind-apk $PREFIX/bin/signapk
 	rm ~/metasploit-framework/lib/msf/core/payload/apk.rb
 	cp apk.rb ~/metasploit-framework/lib/msf/core/payload/
 	(patch ~/metasploit-framework/lib/msf/core/payload/apk.rb < apktool/.apktool/apk.rb.patch) &> /dev/null
