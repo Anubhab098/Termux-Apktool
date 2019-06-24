@@ -87,7 +87,7 @@ echo -e "\e[1;34m[*] \e[32mInstalling Apktool...\e[0m";
 if [ -d "$HOME/metasploit-framework" ]; then
 	echo -e "\e[1;34m[*] \e[32mYour metasploit-framework is present on Home directory....\e[0m";
 	rm -rf $PREFIX/bin/apktool;
-	if [ -e apktoo/apktool.jar ]; then
+	if [ -e apktool/apktool.jar ]; then
 		echo
 	else
 		cd apktool
